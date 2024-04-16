@@ -1,0 +1,16 @@
+;###EXERCISE 1###
+;Check that the following formula is a tautology:
+; (p => q and r) => (p => q) and (p => r)
+
+;we start declaring our propositions
+
+(declare-const p Bool)
+(declare-const q Bool)
+(declare-const r Bool)
+
+;to check the tautology we check the unsatisfiability
+;of the negation of the assertion
+
+(assert (not (=> (=> p (and q r)) (and (=> p q)) (=> p r))))
+
+(check-sat)
