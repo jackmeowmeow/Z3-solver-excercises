@@ -1,0 +1,12 @@
+;Show that the following formulae are logically equivalent:
+; p or q => r && (p=>r)and(q => r)
+
+(declare-const p Bool)
+(declare-const q Bool)
+(declare-const r Bool)
+
+(assert (not (=> (=> (or p q) r) (or (=> p r) (=> q r)))))
+
+(assert (not(=> (or (=> p r) (=> q r)) (=> (or p q) r))))
+
+(check-sat)
